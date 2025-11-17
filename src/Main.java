@@ -10,10 +10,13 @@ public class Main {
         System.out.println("Enter your guess from 1 to 52");
         Cards guess = new Cards();
         int guessOne = scan.nextInt();
-        if (guess.guesses() == guessOne)
+        while (guess.guesses() != guessOne)
         {
-            System.out.println("Congratulations you guessed the " + " correctly!");
+            System.out.println("Wrong!");
+            System.out.print("Try again!");
+            scan.nextLine();
         }
+        System.out.println("Congratulations you guessed the " + " correctly!");
 
     }
 }
