@@ -15,7 +15,6 @@ public class Cards {
     {
         int guess = 0;
         guess = random;
-        System.out.println(guess);
         return guess;
     }
     public String cardValue ()
@@ -46,9 +45,49 @@ public class Cards {
         {
             if (guesses() == i)
             {
-                answer = "S" + (i-13);
+                answer = "S" + (i-39);
             }
         }
         return answer;
     }
-}
+    public String cardSuit() {
+        int answer = 0;
+        String suit = "";
+        for (int i = 0; i < 13; i++) {
+            if (guesses() == i) {
+                answer = i;
+                suit = "D";
+            }
+        }
+        for (int i = 14; i < 26; i++) {
+            if (guesses() == i) {
+                answer = (i - 13);
+                suit = "C";
+            }
+        }
+        for (int i = 27; i < 39; i++) {
+            if (guesses() == i) {
+                answer = (i - 26);
+                suit = "H";
+
+            }
+        }
+        for (int i = 40; i < 52; i++) {
+            if (guesses() == i) {
+                answer = (i - 39);
+                suit = "S";
+            }
+            return suit;
+        }
+        public String fullCardName()
+    {
+            {
+                String diamonds = "D";
+                if (cardValue().indexOf(0) == 68) {
+                    String name = "Diamonds" + cardValue().indexOf(1);
+
+
+                }
+            }
+        }
+    }

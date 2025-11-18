@@ -3,10 +3,12 @@ import java.util.Scanner;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        Cards value = new Cards();
         Scanner scan = new Scanner(System.in);
-        System.out.println("Enter 52: ");
-        int start = scan.nextInt();
-        int cards = Cards.cards(start);
+        System.out.println("Write Yes to start:  ");
+        String start = scan.nextLine();
+        int deck = 52;
+        int cards = Cards.cards(deck);
         System.out.println("Enter your guess from 1 to 52");
         Cards guess = new Cards();
         int guessOne = scan.nextInt();
@@ -16,7 +18,9 @@ public class Main {
             System.out.print("Try again!");
             scan.nextLine();
         }
-        System.out.println("Congratulations you guessed the " + " correctly!");
+        String card = value.cardValue();
+        System.out.println(value.cardValue());
+        System.out.println("Congratulations you guessed the " + card + " correctly!");
 
     }
 }
