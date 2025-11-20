@@ -1,4 +1,5 @@
 import java.util.Scanner;
+import java.text.DecimalFormat;
 //TIP To <b>Run</b> code, press <shortcut actionId="Run"/> or
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
@@ -12,7 +13,7 @@ public class Main {
         System.out.println("Enter your guess from 1 to 52");
         Cards guess = new Cards();
         int guessOne = scan.nextInt();
-        while (guess.guesses() != guessOne)
+        while (Integer.parseInt(guess.guesses()) != guessOne)
         {
             System.out.println("Wrong!");
             System.out.print("Try again!");
