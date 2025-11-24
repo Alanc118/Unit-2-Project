@@ -4,6 +4,7 @@ import java.text.DecimalFormat;
 // click the <icon src="AllIcons.Actions.Execute"/> icon in the gutter.
 public class Main {
     public static void main(String[] args) {
+        DecimalFormat formatter = new DecimalFormat("00");
         Cards value = new Cards();
         Scanner scan = new Scanner(System.in);
         System.out.println("Write Yes to start:  ");
@@ -19,7 +20,7 @@ public class Main {
             System.out.print("Try again!");
             scan.nextLine();
         }
-        String card = value.fullCardName()  ;
+        String card = value.fullCardName();
         System.out.println(card);
         System.out.println("Congratulations you guessed the " + card + " correctly!");
 
