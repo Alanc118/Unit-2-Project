@@ -1,9 +1,9 @@
 import org.xml.sax.ext.Attributes2;
 import java.text.DecimalFormat;
 public class Cards {
-    //private int random = (int) (formatter.format((Math.random()*4)+1));
+
     DecimalFormat formatter = new DecimalFormat("00");
-    private double random = 1;
+    private int random = Integer.parseInt(formatter.format((int) (Math.random() * 4) +1));
 
 
     public static int cards(int cardnumber) {
@@ -77,33 +77,34 @@ public class Cards {
         String name = "";
         if (cardSuit().charAt(0) == 'D') {
             String index = cardValue();
-            int letterOne = index.charAt(1);
-            int letterTwo = index.charAt(2);
+            int letterOne = Integer.parseInt(String.valueOf(index.charAt(1)));
+            int letterTwo = Integer.parseInt(String.valueOf(index.charAt(2)));
             String diamonds = letterOne + "" + letterTwo;
             System.out.println(diamonds);
             System.out.println(letterOne);
             System.out.println(letterTwo);
-            if (letterOne == 48) {
-                if (letterTwo == 49) {
+            if (letterOne == 0) {
+                if (letterTwo == 1) {
                     diamonds = "Ace";
                 }
             }
-            if (letterOne == '1') {
-                if (letterTwo == '1') {
-                    diamonds = "Jack";
-                } else if (letterTwo == '2') {
-                    diamonds = "Queen";
-                } else if (letterTwo == '3') {
-                    diamonds = "King";
+                if (letterOne == 1) {
+                    if (letterTwo == 1) {
+                        diamonds = "Jack";
+                    } else if (letterTwo == 2) {
+                        diamonds = "Queen";
+                    } else if (letterTwo == 3) {
+                        diamonds = "King";
+                    }
+                    System.out.println(diamonds);
                 }
-                System.out.println(diamonds);
                 name = diamonds + " of Diamonds";
             }
-        }
+
         else if (cardSuit().charAt(0) == 'C') {
             String index = cardValue();
-            char letterOne = index.charAt(1);
-            char letterTwo = index.charAt(2);
+            int letterOne = Integer.parseInt(String.valueOf(index.charAt(1)));
+            int letterTwo = Integer.parseInt(String.valueOf(index.charAt(2)));
             String clovers = letterOne + "" + letterTwo;
             if (letterOne == '0') {
                 if (letterTwo == '1') {
@@ -118,13 +119,14 @@ public class Cards {
                 } else if (letterTwo == '3') {
                     clovers = "King";
                 }
-                name = clovers + " of Clovers";
             }
-        } else if (cardSuit().charAt(0) == 'H') {
+            name = clovers + " of Clovers";
+        }
+        else if (cardSuit().charAt(0) == 'H') {
             String index = cardValue();
             System.out.println("Index is " + index);
-            char letterOne = index.charAt(1);
-            char letterTwo = index.charAt(2);
+            int letterOne = Integer.parseInt(String.valueOf(index.charAt(1)));
+            int letterTwo = Integer.parseInt(String.valueOf(index.charAt(2)));
             String hearts = letterOne + "" + letterTwo;
             if (letterOne == '0') {
                 if (letterTwo == '1') {
@@ -139,13 +141,13 @@ public class Cards {
                 } else if (letterTwo == '3') {
                     hearts = "King";
                 }
-                name = hearts + " of Hearts";
             }
-        } else if (cardSuit().charAt(0) == 'S') {
+            name = hearts + " of Hearts";
+        }
+        else if (cardSuit().charAt(0) == 'S') {
             String index = cardValue();
-            char letterOne = index.charAt(1);
-            char letterTwo = index.charAt(2);
-
+            int letterOne = Integer.parseInt(String.valueOf(index.charAt(1)));
+            int letterTwo = Integer.parseInt(String.valueOf(index.charAt(2)));
             String spades = letterOne + "" + letterTwo;
             if (letterOne == '0') {
                 if (letterTwo == '1') {
@@ -160,8 +162,8 @@ public class Cards {
                 } else if (letterTwo == '3') {
                     spades = "King";
                 }
-                name = spades + " of Spades";
             }
+            name = spades + " of Spades";
         }
         System.out.println(name);
         return name;

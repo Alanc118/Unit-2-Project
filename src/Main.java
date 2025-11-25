@@ -20,6 +20,7 @@ public class Main {
             System.out.print("Try again!");
             scan.nextLine();
         }
+
         String card = value.fullCardName();
         System.out.println(card);
         System.out.println("Congratulations you guessed the " + card + " correctly!");
